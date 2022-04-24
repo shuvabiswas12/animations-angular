@@ -1,0 +1,22 @@
+<div class="container" @headingAnimation>
+  <h1 class="mt-5 heading">Todos</h1>
+  <input
+    type="text"
+    class="form-control"
+    #itemInput
+    (keyup.enter)="addItem(itemInput)"
+  />
+  <div class="list-group mt-2 container w-50">
+    <ng-container *ngFor="let item of items">
+      <button
+        @todoAnimation
+        (@todoAnimation.start)="todoAnimationStart($event)"
+        (@todoAnimation.done)="todoAnimationDone($event)"
+        (click)="removeItem(item)"
+        class="list-group-item text-start"
+      >
+        {{ item }}
+      </button>
+    </ng-container>
+  </div>
+</div>

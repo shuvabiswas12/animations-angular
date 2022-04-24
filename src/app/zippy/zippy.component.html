@@ -1,0 +1,11 @@
+<div class="zippy w-50 m-auto mt-3 disable-select">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="toggle()">
+    {{ title }}
+  </div>
+  <div
+    class="zippy-body"
+    [@expandAndCollapse]="isExpanded ? 'expand' : 'collapse'"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>
